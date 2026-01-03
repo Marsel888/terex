@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Облік фінансів</title>
+<!-- index.html -->
+
+<link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+ 
+   <button class="button" onclick="window.location.href='index.html'">Склад</button>
+  <h1>Облік фінансів</h1>
+ 
+   <div class="section balanceSection">
+    <h2>Баланс</h2>
+    <p id="balance" class="balance">0 грн</p>
+  </div>
+<div class="section finance-sections">
+  <!-- --- Прихід --- -->
+  <div class="half">
+    <h2>💰 Прихід (продаж товару)</h2>
+    <label>Продукт:</label>
+    <select id="productSelect"></select>
+    <p id="availableInfo">Доступно: 0 шт.</p>
+    <label>Кількість:</label>
+    <input id="productQty" type="number" placeholder="Кількість" min="1" />
+    <label>Сума:</label>
+    <input id="incomeAmount" type="number" placeholder="Сума" step="0.01" />
+    <label>Опис:</label>
+    <input id="incomeDesc" placeholder="Опис" />
+    <label>Дата:</label>
+    <input id="incomeDate" type="date" />
+    <button onclick="addIncome()">Додати прихід</button>
+  </div>
+
+  <!-- --- Розхід --- -->
+  <div class="half">
+    <h2>💸 Розхід (витрати грошей)</h2>
+    <label>Сума:</label>
+    <input id="expenseAmount" type="number" placeholder="Сума" step="0.01" />
+    <label>Опис:</label>
+    <input id="expenseDesc" placeholder="Опис" />
+    <label>Дата:</label>
+    <input id="expenseDate" type="date" />
+    <button onclick="addExpense()">Додати розхід</button>
+  </div>
+</div>
+
+  <div class="section">
+    <h2>Операції</h2>
+    <table id="financeTable">
+      <thead>
+        <tr><th>Дата</th><th>Тип</th><th>Сума</th><th>Опис</th><th>Дія</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+<div class="pagination">
+  <button id="prevPage">← Попередня</button>
+  <span id="pageInfo">Сторінка 1</span>
+  <button id="nextPage">Наступна →</button>
+</div>
+<script src="finance.js"></script>
+</body>
+</html>

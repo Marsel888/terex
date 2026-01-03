@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Облік виробництва</title>
+<!-- index.html -->
+
+<link rel="stylesheet" href="/style.css" />
+
+</head>
+<body>
+    <button class="button" onclick="window.location.href='finance.html'">Фінанси</button>
+  <h1>Облік виробництва</h1>
+
+  <div class="flexSection">
+     <div class="section">
+  <h2>📦 Весь склад продукції</h2>
+  <table id="fullInventoryTable">
+    <thead>
+      <tr><th>Назва виробу</th><th>Кількість</th></tr>
+    </thead>
+    <tbody>
+      <!-- Дані з MongoDB будуть тут -->
+    </tbody>
+  </table>
+  <button class= "removeFullInventoryTable" onclick="removeFullInventoryTable()">Видалити весь склад</button>
+</div>
+  <div class="section">
+    <h2>Склад компонентів</h2>
+    <select id="itemSelect"></select>
+    <input id="itemQty" type="number" placeholder="Кількість" />
+    <button onclick="addItem()">Додати</button>
+     <button onclick="removeItem()">Видалити</button>
+    <table id="inventoryTable">
+      <thead>
+        <tr><th>Назва</th><th>Кількість</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+<div class="section">
+  <h2>Максимально можлива кількість продуктів</h2>
+  <p id="maxProducts"></p> <!-- тут будемо показувати результат -->
+  <table id="sumTable">
+    <thead>
+      <tr><th>Назва</th><th>Кількість</th></tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>
+</div>
+
+
+
+  <div class="section">
+    <h2>Виробництво</h2>
+    <select id="productSelect"></select>
+    <input id="produceQty" type="number" placeholder="Кількість для виробництва" />
+    <button onclick="produce()">Зробити</button>
+    <p id="maxInfo"></p>
+    <table>
+      <thead>
+        <tr><th>Дата</th><th>Виріб</th><th>Кількість</th><th>Дії</th></tr>
+      </thead>
+      <tbody id="historyBody"></tbody>
+    </table>
+  </div>
+  <script src="/index.js"></script>
+</body>
+</html>
