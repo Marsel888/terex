@@ -23,8 +23,6 @@ app.use(express.static(path.join(__dirname, '')));
 // ==== MongoDB ====
 const uri = 'mongodb+srv://bjiad7778888_db_user:AanyYeZnz4CvOgSx@cluster1.d3ce91h.mongodb.net/?retryWrites=true&w=majority&appName=Cluster1';
 const client = new MongoClient(uri, {
-  tls: true,
-  tlsAllowInvalidCertificates: true,
   serverSelectionTimeoutMS: 5000
 });
 let db;
